@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       get 'search/movies/intheatres', to: 'api_controller#movies_in_theatres' 
 
       get 'search/movies/:id', to: 'api_controller#get_movie_by_id'
+
+      get 'search/videos/:id', to: 'api_controller#get_movie_videos_by_id'
     end
   end
 end

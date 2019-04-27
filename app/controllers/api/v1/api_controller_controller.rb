@@ -13,12 +13,20 @@ class Api::V1::ApiControllerController < ApplicationController
     end
 
     def get_movie_by_id
-       
         response = HTTP.get("#{BASE_URL}movie/#{params[:id]}",
             :params => {
             :api_key => ENV["API_KEY"]
         } ).to_s
         render json: response
+    end
+
+    def get_movie_videos_by_id
+
+       response = HTTP.get("#{BASE_URL}movie/#{params[:id]}/videos",
+            :params => {
+            :api_key => ENV["API_KEY"]
+        } ).to_s
+        render json: response 
 
     end
 end
